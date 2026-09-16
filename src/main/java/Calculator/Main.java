@@ -7,14 +7,51 @@ public class Main {
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
         // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-        int a=sc.nextInt();
+        int a = sc.nextInt();
 
         System.out.print("두 번째 숫자를 입력하세요: ");
         // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-        int B=sc.nextInt();
+        int b = sc.nextInt();
 
         System.out.print("사칙연산 기호를 입력하세요: ");
         // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
-        char c=sc.next().charAt(0);
+        char c = sc.next().charAt(0);
+
+        int result = 0;
+
+        try {
+            switch (c) {
+                case '+':
+                    result = a + b;
+                    break;
+
+                case '-':
+                    result= a - b;
+                    break;
+
+                case '*':
+                    result= a * b;
+                    break;
+
+                case '/':
+                    if (b == 0) {
+                        throw new ArithmeticException("math error");
+                    }
+                    result= a / b;
+                    break;
+
+                default:
+                    throw new IllegalArgumentException("syntax error");
+
+            }
+            System.out.println("결과: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
+
+        sc.close();
     }
+}

@@ -1,6 +1,6 @@
 package Calculator;
 
-public class ArithmeticCalculator<T extends Number> {
+public class ArithmeticCalculator<T extends Double> {
     public double calculate(T a, T b, OperatorType operator) {
 
         double num1 = a.doubleValue();
@@ -10,7 +10,7 @@ public class ArithmeticCalculator<T extends Number> {
             case ADD:
                 return num1 + num2;
 
-            case SUBSTRACT:
+            case SUBTRACT:
                 return num1- num2;
 
             case MULTIPLY:
@@ -18,7 +18,7 @@ public class ArithmeticCalculator<T extends Number> {
 
             case DIVIDE:
                 if (num2 == 0) {
-                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
+                    throw new ArithmeticException("math error");
                 }
                 return num1 / num2;
 

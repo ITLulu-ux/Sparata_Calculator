@@ -4,7 +4,7 @@ import static Calculator.OperatorType.*;
 
 public enum OperatorType {
     ADD,
-    SUBSTRACT,
+    SUBTRACT,
     MULTIPLY,
     DIVIDE
 }
